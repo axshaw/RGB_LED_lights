@@ -40,7 +40,9 @@ while i < 3:
     hsvValue2 = float(h)*360
   elif i==2:
     hsvValue2 = float(v)*100
-    v = v-0.10
+    if(v>0.2):
+      v = v-0.10
+  
   else:
     hsvValue2 = float(s)*100
     

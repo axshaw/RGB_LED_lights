@@ -1,0 +1,32 @@
+/home/pi/kidsLights/startLights.sh: line 4: log/lights.log: No such file or directory
+Ready
+Traceback (most recent call last):
+  File "IR.py", line 11, in <module>
+Traceback (most recent call last):
+  File "changeLightsConsumer.py", line 6, in <module>
+Traceback (most recent call last):
+  File "changeLightsConsumer.py", line 6, in <module>
+        host='localhost'))
+connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
+    host='localhost'))
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 339, in __init__
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 339, in __init__
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 339, in __init__
+            self._process_io_for_connection_setup()
+self._process_io_for_connection_setup()
+self._process_io_for_connection_setup()
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 374, in _process_io_for_connection_setup
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 374, in _process_io_for_connection_setup
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 374, in _process_io_for_connection_setup
+            self._open_error_result.is_ready)
+self._open_error_result.is_ready)
+self._open_error_result.is_ready)
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 395, in _flush_output
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 395, in _flush_output
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 395, in _flush_output
+    raise exceptions.ConnectionClosed()
+    raise exceptions.ConnectionClosed()
+pika.exceptions.    ConnectionClosedraise exceptions.ConnectionClosed()
+
+pika.exceptions.ConnectionClosedpika.exceptions.
+ConnectionClosed

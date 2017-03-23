@@ -1,39 +1,29 @@
+#!/usr/bin/env python
 import lirc
-import os
-import threading
-import subprocess
+import pika
+import sys
 
 sockid = lirc.init("/home/pi/kidsLights/IR.py","/home/pi/.lircrc")
-print("Ready")
-thread='stopped'
-
-
-def doit(arg):
-      t = threading.currentThread()
-      thread="running"
-      while getattr(t, "do_run", True):
-          print('================= thread =====================')
-          print (arg)
-          os.system(arg)
-          
-
+#print("IR Ready")
+connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
+channel = connection.channel()
+channel.exchange_declare(exchange='ChangeLights',type='topic')
+routing_key = '*.colour'
 
 while True:
 #wait for button press - this will need changing to queue to accept non IR changes
 	code = lirc.nextcode()
-#when IR pressed check if threads are running and kill
-        if thread=='running':
-            t.do_run = False
-            t.join()
-            thread='stopped'
- 	
+	#check if out of range
+	try:
+		message = code[0]
+	except IndexError:
+		message = '0 0 0'
+        connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
+        channel = connection.channel()
+        channel.exchange_declare(exchange='ChangeLights',type='topic')
+        routing_key = '*.colour'
+
+        channel.basic_publish(exchange='changeLights',routing_key=routing_key,body=message)
+        print(" [x] Sent %r:%r" % (routing_key, message))
+#        connection.close()
         if code:  print(code[0])
-#set command to run         
-        argsCmd=code[0]
-        print('args')
-        print(argsCmd)
-#        os.system(argsCmd)
-#run command in thread
-        t = threading.Thread(target=doit, args=(argsCmd,))
-        t.daemon = True
-        t.start()
