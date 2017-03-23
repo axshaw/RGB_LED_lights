@@ -17,6 +17,7 @@ class DataSets extends React.Component    {
 					<li>52.629316, -0.407777</li>
 					<li>http://api.sunrise-sunset.org/json?lat=52.629316&lng=-0.407777&date=today</li>
 					<li>http://datapoint.metoffice.gov.uk/public/data/val/wxobs/all/json/3462/?res=hourly&key=cee0b1ec-a751-458a-894e-6aec68a91beb</li>
+					<li>http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/xml/3462/?res=3hourly&key=cee0b1ec-a751-458a-894e-6aec68a91beb</li>
 				</ul>
 			</CardText>  
 		</Card>

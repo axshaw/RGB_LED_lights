@@ -1,0 +1,132 @@
+begin
+    button = TK5050RGB_STATIC_RED
+    prog = /home/pi/kidsLights/IR.py
+    config = 255 0 0 
+end
+
+begin
+    button = TK5050RGB_STATIC_GREEN
+    prog = /home/pi/kidsLights/IR.py
+    config = 0 255 0
+end
+
+begin
+    button = TK5050RGB_STATIC_BLUE
+    prog = /home/pi/kidsLights/IR.py
+    config = 0 0 255
+end
+
+begin
+    button = TK5050RGB_STATIC_WHITE
+    prog = /home/pi/kidsLights/IR.py
+    config = 255 255 255
+end
+
+begin
+    button = TK5050RGB_STATIC_ORANGE
+    prog = /home/pi/kidsLights/IR.py
+    config = 128 255 0
+end
+
+begin
+    button = TK5050RGB_STATIC_PEAGREAN
+    prog = /home/pi/kidsLights/IR.py
+    config = 153 189 57
+end
+
+begin
+    button = TK5050RGB_STATIC_DARKBLUE
+    prog = /home/pi/kidsLights/IR.py
+    config = 0 0 139
+end
+
+begin
+    button = TK5050RGB_STATIC_MILKWHITE
+    prog = /home/pi/kidsLights/IR.py
+    config = 220 217 205
+end
+
+begin
+    button = TK5050RGB_STATIC_DARKYELLOW
+    prog = /home/pi/kidsLights/IR.py
+    config = 215 195 42
+end
+
+begin
+    button = TK5050RGB_STATIC_CYAN
+    prog = /home/pi/kidsLights/IR.py
+    config = 14 252 254
+end
+
+begin
+    button = TK5050RGB_STATIC_LYONSBLUE
+    prog = /home/pi/kidsLights/IR.py
+    config = 54 56 74
+end
+
+begin
+    button = TK5050RGB_STATIC_WHITEPINK
+    prog = /home/pi/kidsLights/IR.py
+    config = 255 182 193
+end
+
+begin
+    button = TK5050RGB_STATIC_YELLOW
+    prog = /home/pi/kidsLights/IR.py
+    config = 255 255 0
+end
+
+begin
+    button = TK5050RGB_STATIC_LIGHTBLUE
+    prog = /home/pi/kidsLights/IR.py
+    config = 202 225 255
+end
+
+begin
+    button = TK5050RGB_STATIC_PINK
+    prog = /home/pi/kidsLights/IR.py
+    config = 255 192 203
+end
+
+begin
+    button = TK5050RGB_STATIC_GREENWHITE
+    prog = /home/pi/kidsLights/IR.py
+    config = 193 255 193
+end
+
+begin
+    button = TK5050RGB_STATIC_LIGHTYELLOW
+    prog = /home/pi/kidsLights/IR.py
+    config = 255 255 224
+end
+
+begin
+    button = TK5050RGB_STATIC_SKYBLUE
+    prog = /home/pi/kidsLights/IR.py
+    config = 135 206 255
+end
+
+begin
+    button = TK5050RGB_STATIC_BROWN
+    prog = /home/pi/kidsLights/IR.py
+    config = 205 102 29
+end
+
+begin
+    button = TK5050RGB_STATIC_BLUEWHITE
+    prog = /home/pi/kidsLights/IR.py
+    config = 240 255 255
+end
+
+
+begin
+    button = TK5050RGB_DIY_KEY1
+    prog = /home/pi/kidsLIghts/IR.py
+    config = python /home/pi/kidsLights/rainbow.py
+end
+
+begin
+    button = TK5050RGB_ONOFF
+    prog = /home/pi/kidsLights/IR.py
+    config = 0 0 0
+end
