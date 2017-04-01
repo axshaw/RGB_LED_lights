@@ -20,7 +20,7 @@ class Lights extends React.Component    {
   	}
 
 	fetchRGB() {
-		fetch('http://192.168.42.152:3010/')
+		fetch('http://192.168.1.87:3010/')
       			.then((response) => response.json())
       			.then((responseJson) => {
              			this.setState({
