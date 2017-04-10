@@ -1,5 +1,5 @@
-var express = require('express')
-var app = express()
+var express = require('express');
+var app = express();
 var exec = require('child_process').exec;
 
 app.use(function(req, res, next) {
@@ -19,6 +19,10 @@ app.get('/', function (req, res, next) {
 		}
 	});
 
+})
+
+app.get('/setColour/:red-:green-:blue', function(req, res, next) {
+	res.send(req.params);
 })
 
 app.listen(3010, function()	{
