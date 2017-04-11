@@ -39,7 +39,7 @@ class Lights extends React.Component    {
                   <Card style={{ marginTop: 30, marginLeft: 30, marginRight: 30, flex:1}}>
                         <CardHeader 
 				title="Jasmine's Lights" 
-				subtitle="status of current Lights" 
+				subtitle="Status of Lights" 
 			/>
 			<CardTitle title="Current live colour" subtitle="RGB Values" />
                         <CardText>

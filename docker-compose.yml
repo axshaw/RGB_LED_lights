@@ -1,0 +1,8 @@
+web:
+  build: ./lights-web
+  ports:
+   - "3000:3000"
+  volumes:
+   - ./lights-web/src:/usr/src/app/src
+lightsGetColour-nodejs:
+  image: "axshaw/lightscetcolour-nodejs"
