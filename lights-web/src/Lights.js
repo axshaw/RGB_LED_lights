@@ -2,6 +2,7 @@ import React from 'react';
 import reactCSS from 'reactcss';
 import { Card, CardHeader, CardTitle, CardText } from 'material-ui/Card';
 import { SketchPicker } from 'react-color';
+import RaisedButton from 'material-ui/RaisedButton';
 import './Lights.css';
 
 class Lights extends React.Component {
@@ -49,8 +50,6 @@ class Lights extends React.Component {
           });
     }
 
-
-
       handleClick = () => {
         this.setState({ displayColorPicker: !this.state.displayColorPicker })
       };
@@ -67,6 +66,9 @@ class Lights extends React.Component {
     render() {
         let rgbColour = { backgroundColor: "rgb(" + this.state.colourJSON.join(',') + ")" }
 
+        const style = {
+          margin: 12,
+        };
 
         const styles = reactCSS({
           'default': {
@@ -102,6 +104,7 @@ class Lights extends React.Component {
             <div style={{ display: 'flex' }} >
               <Card style={{ marginTop: 30, marginLeft: 30, marginRight: 30, flex: 1 }} >
                 <CardHeader title="Jasmine's Lights" subtitle="Status of Lights" />
+                <RaisedButton label="Turn Off" primary={true} style={style} onClick={() => { this.setRGB({r:'0',g:'0',b:'0',a:'0'}) }}/>
                 <CardTitle title="Current live colour" subtitle="RGB Values" />
                 <CardText>
                   <div style={ rgbColour } className="lightsBox">
