@@ -6,6 +6,7 @@ web:
    - ./lights-web/src:/usr/src/app/src
   environment:
    - NODE_ENV=development
+   - REACT_APP_LIGHTS_IP=localhost
 lightsgetcolour-nodejs:
   build: ./lightsGetColour-nodejs
   ports:

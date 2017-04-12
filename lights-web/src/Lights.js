@@ -3,7 +3,7 @@ import reactCSS from 'reactcss';
 import { Card, CardHeader, CardTitle, CardText } from 'material-ui/Card';
 import { SketchPicker } from 'react-color';
 import './Lights.css';
-var config = require('./config.json')[process.env.NODE_ENV];
+//var config = require('./config.json')[process.env.NODE_ENV];
 
 class Lights extends React.Component {
     constructor(props) {
@@ -23,7 +23,7 @@ class Lights extends React.Component {
     }
 
     fetchRGB() {
-        fetch('http://' + config.lightsIP + ':3010/')
+        fetch('http://' + [process.env.REACT_APP_LIGHTS_IP] + ':3010/')
             .then((response) => response.json())
             .then((responseJson) => {
                 this.setState({
@@ -43,7 +43,7 @@ class Lights extends React.Component {
 
     setRGB(newColour) {
       console.log(newColour);
-      fetch('http://' + config.lightsIP + ':3010/setColour/'+newColour.r+'-'+newColour.g+'-'+newColour.b)
+      fetch('http://' + [process.env.REACT_APP_LIGHTS_IP] + ':3010/setColour/'+newColour.r+'-'+newColour.g+'-'+newColour.b)
           .then((response) => response.json())
           .catch((error) => {
               console.error(error);
