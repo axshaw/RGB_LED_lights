@@ -43,7 +43,7 @@ class Lights extends React.Component {
     setRGB(newColour) {
       console.log(newColour);
       fetch('http://' + [process.env.REACT_APP_LIGHTS_IP] + ':3010/setColour/'+newColour.r+'-'+newColour.g+'-'+newColour.b)
-          .then((response) => response.json())
+          .then()
           .catch((error) => {
               console.error(error);
           });
