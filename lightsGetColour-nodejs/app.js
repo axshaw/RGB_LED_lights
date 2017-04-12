@@ -9,10 +9,10 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', function (req, res, next) {
-	
+
 	exec("/home/pi/kidsLights/getLights.sh", function(error, stdout, stderr) {
 		if(!error)	{
-			
+
 			res.json(stdout.replace(/\r?\n|\r/,"").split(" "));
 		}else	{
 			res.status(500).json({error:error});

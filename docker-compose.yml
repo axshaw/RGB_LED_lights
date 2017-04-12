@@ -1,0 +1,14 @@
+web:
+  build: ./lights-web
+  ports:
+   - "3000:3000"
+  volumes:
+   - ./lights-web/src:/usr/src/app/src
+  environment:
+   - NODE_ENV=development
+lightsGetColour-nodejs:
+  image: "axshaw/lightsgetcolour-nodejs"
+  ports:
+    - "3010:3010"
+  environment:
+   - NODE_ENV=development
