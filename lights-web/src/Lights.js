@@ -1,14 +1,14 @@
 import React from 'react';
 import reactCSS from 'reactcss';
 import { Card, CardHeader, CardTitle, CardText } from 'material-ui/Card';
-import { HuePicker, SliderPicker, SketchPicker } from 'react-color';
+import { SketchPicker } from 'react-color';
 import './Lights.css';
 var config = require('./config.json')[process.env.NODE_ENV];
 
 class Lights extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { colour: [0, 0, 0], displayColorPicker: false, color:{r:'0',g:'0',b:'0',a:'0'} };
+        this.state = { colourJSON: [0, 0, 0], displayColorPicker: false, colour:{r:'0',g:'0',b:'0',a:'0'} };
     }
 
 	componentDidMount()	{
@@ -27,11 +27,11 @@ class Lights extends React.Component {
             .then((response) => response.json())
             .then((responseJson) => {
                 this.setState({
-                    colour: responseJson,
-                    color: {
-                        r: this.state.colour[0],
-                        g: this.state.colour[1],
-                        b: this.state.colour[2],
+                    colourJSON: responseJson,
+                    colour: {
+                        r: responseJson[0],
+                        g: responseJson[1],
+                        b: responseJson[2],
                         a: '1'
                       }
                 })
@@ -60,22 +60,22 @@ class Lights extends React.Component {
         this.setState({ displayColorPicker: false })
       };
 
-      handleChange = (color) => {
-        this.setRGB(color.rgb);
+      handleChange = (colour) => {
+        this.setRGB(colour.rgb);
       };
 
 
     render() {
-        let rgbColour = { backgroundColor: "rgb(" + this.state.colour.join(',') + ")" }
+        let rgbColour = { backgroundColor: "rgb(" + this.state.colourJSON.join(',') + ")" }
 
 
         const styles = reactCSS({
           'default': {
-            color: {
+            colour: {
               width: '36px',
               height: '14px',
               borderRadius: '2px',
-              background: `rgba(${ this.state.color.r }, ${ this.state.color.g }, ${ this.state.color.b }, ${ this.state.color.a })`,
+              background: `rgba(${ this.state.colour.r }, ${ this.state.colour.g }, ${ this.state.colour.b }, ${ this.state.colour.a })`,
             },
             swatch: {
               padding: '5px',
@@ -106,7 +106,7 @@ class Lights extends React.Component {
                 <CardTitle title="Current live colour" subtitle="RGB Values" />
                 <CardText>
                   <div style={ rgbColour } className="lightsBox">
-                  { this.state.colour.join(',') }
+                  { this.state.colourJSON.join(',') }
                   </div>
                 </CardText>
               </Card>
@@ -115,11 +115,11 @@ class Lights extends React.Component {
                 <CardText>
                   <div>
                       <div style={ styles.swatch } onClick={ this.handleClick }>
-                        <div style={ styles.color } />
+                        <div style={ styles.colour } />
                       </div>
                       { this.state.displayColorPicker ? <div style={ styles.popover }>
                         <div style={ styles.cover } onClick={ this.handleClose }/>
-                        <SketchPicker color={ this.state.color } onChange={ this.handleChange } />
+                        <SketchPicker color={ this.state.colour } onChange={ this.handleChange } />
                       </div> : null }
 
                     </div>
