@@ -34,9 +34,18 @@ def callback(ch, method, properties, body):
         print sys.exc_info()
         pass
 
-    if body=="rainbow":
+    if "rainbow" in body:
         print("entering rainbow mode")
         submode=subprocess.Popen(['python','/home/pi/kidsLights/rainbow.py'],preexec_fn=os.setsid)
+    elif "flash" in body:
+        print("entering flash mode")
+        submode=subprocess.Popen(['python','/home/pi/kidsLights/flash.py'],preexec_fn=os.setsid)
+    elif "dim" in body:
+        print("dim")
+        submode=subprocess.Popen(['python','/home/pi/kidsLights/brightnessDown.py'],preexec_fn=os.setsid)
+    elif "brighten" in body:
+        print("brighten")
+        submode=subprocess.Popen(['python','/home/pi/kidsLights/brightnessUp.py'],preexec_fn=os.setsid)
     else:
         submode=subprocess.Popen('/home/pi/kidsLights/changeLights.sh ' + body,preexec_fn=os.setsid, shell=True)
         #os.system('/home/pi/kidsLights/changeLights.sh ' + body)

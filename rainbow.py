@@ -2,6 +2,7 @@
 import colorsys
 import os
 import time
+import sys
 
 os.system('pigs p 17 0')
 os.system('pigs p 27 0')
@@ -15,4 +16,4 @@ while True:
         os.system('pigs p 17 ' + str(int(round(r*255))))
         os.system('pigs p 22 ' + str(int(round(g*255))))
         os.system('pigs p 27 ' + str(int(round(b*255))))
-       # time.sleep(0.01)
+#        time.sleep(0.01)

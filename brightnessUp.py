@@ -32,7 +32,7 @@ print(h)
 print(s)
 print(v)
 
-#reduce the number of v 
+#increase the number of v 
 i=0
 hsv2=[]
 while i < 3:
@@ -41,7 +41,7 @@ while i < 3:
   elif i==2:
     hsvValue2 = float(v)*100
     if(v>0.2):
-      v = v-0.10
+      v = v+0.10
   
   else:
     hsvValue2 = float(s)*100
