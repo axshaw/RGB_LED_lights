@@ -35,41 +35,24 @@ class Lights extends React.Component {
 
     render() {
         let rgbColour = { backgroundColor: "rgb(" + this.state.colour.join(',') + ")" }
-        return ( <
-            div style = {
-                { display: 'flex' }
-            } >
-            <
-            Card style = {
-                { marginTop: 30, marginLeft: 30, marginRight: 30, flex: 1 }
-            } >
-            <
-            CardHeader title = "Jasmine's Lights"
-            subtitle = "Status of Lights" /
-            >
-            <
-            CardTitle title = "Current live colour"
-            subtitle = "RGB Values" / >
-            <
-            CardText >
-            <
-            div style = { rgbColour }
-            className = "lightsBox" > { this.state.colour.join(',') } <
-            /div> < /
-            CardText > <
-            /Card> <
-            Card style = {
-                { marginRight: 30, marginTop: 30, flex: 1 }
-            } >
-            <
-            CardHeader title = "Set Colour"
-            subtitle = "Change the colour of lights" / >
-            <
-            CardText >
-            Colour Picker <
-            /CardText> < /
-            Card > <
-            /div>
+        return (
+            <div style={{ display: 'flex' }} >
+              <Card style={{ marginTop: 30, marginLeft: 30, marginRight: 30, flex: 1 }} >
+                <CardHeader title="Jasmine's Lights" subtitle="Status of Lights" />
+                <CardTitle title="Current live colour" subtitle="RGB Values" />
+                <CardText>
+                  <div style={ rgbColour } className="lightsBox">
+                  { this.state.colour.join(',') }
+                  </div>
+                </CardText>
+              </Card>
+              <Card style={{ marginRight: 30, marginTop: 30, flex: 1 }}>
+                <CardHeader title="Set Colour" subtitle="Change the colour of lights" />
+                <CardText>
+                  Colour Picker
+                </CardText>
+              </Card>
+            </div>
         )
     }
 }
