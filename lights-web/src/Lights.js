@@ -3,7 +3,6 @@ import reactCSS from 'reactcss';
 import { Card, CardHeader, CardTitle, CardText } from 'material-ui/Card';
 import { SketchPicker } from 'react-color';
 import './Lights.css';
-//var config = require('./config.json')[process.env.NODE_ENV];
 
 class Lights extends React.Component {
     constructor(props) {
