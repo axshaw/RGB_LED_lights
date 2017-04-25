@@ -7,6 +7,7 @@ web:
   environment:
    - NODE_ENV=development
    - REACT_APP_LIGHTS_IP=localhost
+
 lightsgetcolour-nodejs:
   build: ./lightsGetColour-nodejs
   ports:
@@ -16,3 +17,14 @@ lightsgetcolour-nodejs:
    - ./lightsGetColour-nodejs:/usr/src/app
   environment:
    - NODE_ENV=development
+
+dataretriever-nodejs:
+  build: ./dataRetriever-nodejs
+  ports:
+    - "3011:3011"
+  volumes:
+   - ./:/home/pi/kidsLights
+   - ./dataRetriever-nodejs:/usr/src/app
+  environment:
+   - NODE_ENV=development
+
