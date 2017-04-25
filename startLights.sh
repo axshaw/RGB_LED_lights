@@ -6,5 +6,6 @@ python /home/pi/kidsLights/changeLightsConsumer.py "*.brightness" &
 python /home/pi/kidsLights/IR.py &
 sleep 10
 EXPORT NODE_ENV="production"
+EXPORT REACT_APP_LIGHTS_IP="192.168.42.150"
 node /home/pi/kidsLights/lightsGetColour-nodejs/app.js &
 sudo http-server /home/pi/kidsLights/lights-web/build/ -p 80 &

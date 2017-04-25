@@ -22,7 +22,13 @@ app.get('/', function (req, res, next) {
 })
 
 app.get('/setColour/:red-:green-:blue', function(req, res, next) {
-	res.send(req.params);
+  exec("/home/pi/kidsLights/changeLights.sh " + req.params['red'] + " " + req.params['green'] + " " + req.params['blue'], function(error, stdout, stderr) {
+		if(!error)	{
+			res.status(200).send(req.params['red'] + " " + req.params['green'] + " " + req.params['blue']);
+		}else	{
+			res.status(500).json({error:error});
+		}
+	});
 })
 
 app.listen(3010, function()	{
