@@ -44,7 +44,7 @@ class Lights extends React.Component {
                 { marginTop: 30, marginLeft: 30, marginRight: 30, flex: 1 }
             } >
             <
-            CardHeader title = "Jasmine's Lights"
+            CardHeader title = "Jasmine Lights"
             subtitle = "Status of Lights" /
             >
             <
