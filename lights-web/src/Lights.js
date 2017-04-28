@@ -1,6 +1,7 @@
 import React from 'react';
 import reactCSS from 'reactcss';
-import { Card, CardHeader, CardTitle, CardText } from 'material-ui/Card';
+import { Card, CardHeader, CardTitle, CardText} from 'material-ui/Card';
+
 import { SketchPicker } from 'react-color';
 import RaisedButton from 'material-ui/RaisedButton';
 import './Lights.css';
@@ -64,7 +65,6 @@ class Lights extends React.Component {
 
 
     render() {
-        let rgbColour = { backgroundColor: "rgb(" + this.state.colourJSON.join(',') + ")" }
 
         const style = {
           margin: 12,
@@ -73,12 +73,13 @@ class Lights extends React.Component {
         const styles = reactCSS({
           'default': {
             colour: {
-              width: '36px',
-              height: '14px',
+              width: '100%',
+              height: '25px',
               borderRadius: '2px',
-              background: `rgba(${ this.state.colour.r }, ${ this.state.colour.g }, ${ this.state.colour.b }, ${ this.state.colour.a })`,
+              background: `rgba(${ this.state.colour.r }, ${ this.state.colour.g }, ${ this.state.colour.b }, 1)`,
             },
             swatch: {
+              width: '100%',
               padding: '5px',
               background: '#fff',
               borderRadius: '1px',
@@ -101,33 +102,21 @@ class Lights extends React.Component {
         });
 
         return (
-            <div style={{ display: 'flex' }} >
               <Card style={{ marginTop: 30, marginLeft: 30, marginRight: 30, flex: 1 }} >
                 <CardHeader title="Jasmine's Lights" subtitle="Status of Lights" />
                 <RaisedButton label="Turn Off" primary={true} style={style} onClick={() => { this.setRGB({r:'0',g:'0',b:'0',a:'0'}) }}/>
                 <CardTitle title="Current live colour" subtitle="RGB Values" />
                 <CardText>
-                  <div style={ rgbColour } className="lightsBox">
-                  { this.state.colourJSON.join(',') }
-                  </div>
-                </CardText>
-              </Card>
-              <Card style={{ marginRight: 30, marginTop: 30, flex: 1 }}>
-                <CardHeader title="Set Colour" subtitle="Change the colour of lights" />
-                <CardText>
-                  <div>
-                      <div style={ styles.swatch } onClick={ this.handleClick }>
-                        <div style={ styles.colour } />
-                      </div>
-                      { this.state.displayColorPicker ? <div style={ styles.popover }>
-                        <div style={ styles.cover } onClick={ this.handleClose }/>
-                        <SketchPicker color={ this.state.colour } onChange={ this.handleChange } />
-                      </div> : null }
-
+                    <div style={ styles.swatch } onClick={ this.handleClick }>
+                      <div style={ styles.colour } />
                     </div>
+                    { this.state.displayColorPicker ? <div style={ styles.popover }>
+                      <div style={ styles.cover } onClick={ this.handleClose }/>
+                      <SketchPicker color={ this.state.colour } onChange={ this.handleChange } />
+                    </div> : null }
+
                 </CardText>
               </Card>
-            </div>
         )
     }
 }
