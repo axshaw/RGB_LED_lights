@@ -1,0 +1,97 @@
+<Toolbar@BoxLayout>:
+    size_hint_y: None
+    height: '48dp'
+    padding: '4dp'
+    spacing: '4dp'
+    canvas:
+        Color:
+            rgba: .2, .2, .2, .6
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<ShadedLabel@Label>:
+    size: self.texture_size
+    canvas.before:
+        Color:
+            rgba: .2, .2, .2, .6
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+<MyButton@Button>:
+    color: .8,.9,0,1
+    font_size: 32
+
+<HBoxWidget>:
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: 'horizontal'
+        padding:0,15,0,0
+        Label:
+            text: "[color=ff0000][size=20][b]Temperature[/b][/size][/color]" + "\n\n[size=75]"+ app.obj +"[/size]"
+            text_size: self.size
+            halign: 'center'
+            valign: 'top'
+            markup:True
+            background_color: 1,1,1,1
+        Label:
+            text: "[size=20][b]Wind[/b][/size]\n\n[size=15][b]Speed[/b][/size]" + "\n[size=50]" + app.objWittering['windSpeed'] + "[/size]\n"+str(app.windSpeedKnots)+" knots\n\n[size=15][b]Direction[/b][/size]"+ "\n[size=50]" + app.objWittering['windDirection']+"[/size]"
+            text_size: self.size
+            halign: 'center'
+            valign: 'top'
+            markup:True
+            background_color: 0,1,0,1
+        Label:
+            text: "[b]Type[/b]\n\n"+app.objWittering['type']
+            text_size: self.size
+            halign: 'center'
+            valign: 'top'
+            markup:True
+            background_color: 0,0,1,1
+            Image:
+                origin: self.center
+                center: self.parent.center
+                source: 'icons/sunny.jpg'
+
+<HBoxWidget2>:
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: 'horizontal'
+        Label:
+            text: "Btn1"
+            markup:True
+            background_color: 1,1,1,1
+            Image:
+                origin: self.center
+                center: self.parent.center
+                source: app.giphySrc
+        Label:
+            text: "Btn2"
+            markup:True
+            background_color: 0,1,0,1
+
+
+<VBoxWidget>:
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        id: foo_bar
+        orientation: 'vertical'
+        Toolbar:
+            top: root.top
+            Button:
+                text: "Leo's House, London"
+                #on_release: mapview.center_on(52.629316, -0.407777)
+            Button:
+                text: "Barnack, UK"
+                #on_release: mapview.center_on(-33.867, 151.206
+
+        HBoxWidget:
+        HBoxWidget2:
+        Toolbar:
+            Label:
+                text: "Last Update"
