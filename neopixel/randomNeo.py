@@ -30,7 +30,7 @@ def randomise(strip):
 	blankAll(strip)		
 
         for i in range(0, 5):
-                strip.setPixelColorRGB(random.randint(0,16),0, 255, 0)
+                strip.setPixelColorRGB(random.randint(0,16),random.randint(0,255),random.randint(0,255), random.randint(0,255))
 	strip.show()
 	time.sleep(0.1)
 	
@@ -38,7 +38,6 @@ def blankAll(strip):
 	for i in range(0, strip.numPixels()):
                 strip.setPixelColorRGB(i, 0,0,0)
 	strip.show()
-
 # Main program logic follows:
 	# Create NeoPixel object with appropriate configuration.
 strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS)
@@ -46,7 +45,8 @@ strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, 
 strip.begin()
 pygame.mixer.pre_init(frequency=44100, size=-16, channels=2)
 pygame.mixer.init()
-pygame.mixer.music.load("computerwarble.wav")
+pygame.mixer.music.load("lookdave.wav")
+pygame.mixer.music.set_volume(.05)
 pygame.mixer.music.play()
 while pygame.mixer.music.get_busy() == True:
 	randomise(strip)

@@ -1,7 +1,7 @@
 # configuration
-from kivy.config import Config
-Config.set('graphics', 'width',  800)
-Config.set('graphics', 'height', 480)
+#from kivy.config import Config
+#Config.set('graphics', 'width',  800)
+#Config.set('graphics', 'height', 480)
 
 import sys
 from kivy.base import runTouchApp
@@ -53,9 +53,9 @@ RelativeLayout:
                 BoxLayout:
                     orientation: "horizontal"
                     padding: "5dp"
-                    AsyncImage:
-                        source: "./zac.jpg"
-                        mipmap: True
+                    #AsyncImage:
+                    #    source: "./zac.jpg"
+                    #    mipmap: True
                     Label:
                         text: "[b]Barnack[/b]\\nHome \\nMission Control"
                         markup: True
@@ -68,9 +68,9 @@ RelativeLayout:
                 BoxLayout:
                     orientation: "horizontal"
                     padding: "5dp"
-                    AsyncImage:
-                        source: "http://upload.wikimedia.org/wikipedia/commons/9/9d/France-Lille-VieilleBourse-FacadeGrandPlace.jpg"
-                        mipmap: True
+                    #AsyncImage:
+                    #    source: "http://upload.wikimedia.org/wikipedia/commons/9/9d/France-Lille-VieilleBourse-FacadeGrandPlace.jpg"
+                    #    mipmap: True
                     Label:
                         text: "[b]Skala[/b]\\nLittle Blue House"
                         markup: True
@@ -83,9 +83,9 @@ RelativeLayout:
                 BoxLayout:
                     orientation: "horizontal"
                     padding: "5dp"
-                    AsyncImage:
-                        source: "http://upload.wikimedia.org/wikipedia/commons/9/9d/France-Lille-VieilleBourse-FacadeGrandPlace.jpg"
-                        mipmap: True
+                    #AsyncImage:
+                    #    source: "http://upload.wikimedia.org/wikipedia/commons/9/9d/France-Lille-VieilleBourse-FacadeGrandPlace.jpg"
+                    #    mipmap: True
                     Label:
                         text: "[b]Perros Guirec[/b]\\nLittle Yellow\\nHouse"
                         markup: True
